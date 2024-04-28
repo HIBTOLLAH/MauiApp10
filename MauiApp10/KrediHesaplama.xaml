@@ -1,0 +1,35 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp10.KrediHesaplama"
+             Title="Kredi Hesaplama">
+
+
+
+    <StackLayout Padding="20">
+        <Entry Placeholder="Kredi Tutarı" x:Name="PrincipalEntry" />
+        <Entry Placeholder="Faiz Oranı (%)" x:Name="InterestRateEntry" />
+        <Entry Placeholder="Vade (Ay)" x:Name="MonthsEntry" />
+
+        <!-- Kredi Türü Seçimi -->
+        <Label Text="Kredi Türü Seçimi" />
+        <Picker x:Name="LoanTypePicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Konut</x:String>
+                    <x:String>Ihtiyac</x:String>
+                    <x:String>Ticari</x:String>
+                    <x:String>Tasit</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Hesapla" Clicked="HesaplamaButton_Clicked" />
+
+        <!-- Sonuçlar -->
+        <Label Text="Aylık Taksit: " x:Name="MonthlyPaymentLabel" />
+        <Label Text="Toplam Faiz: " x:Name="TotalInterestLabel" />
+        <Label Text="Toplam Ödeme: " x:Name="TotalPaymentLabel" />
+    </StackLayout>
+</ContentPage>
+
+

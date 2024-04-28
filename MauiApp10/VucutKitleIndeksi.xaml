@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp10.VucutKitleIndeksi"
+             Title="VucutKitleIndeksi">
+
+
+    
+
+        <StackLayout Padding="20">
+            <Label Text="Kilo (kg):" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Entry Placeholder="Kilo giriniz" x:Name="WeightEntry" Grid.Row="0"/>
+                <Slider Minimum="0" Maximum="200" Value="70" x:Name="WeightSlider" ValueChanged="WeightSlider_ValueChanged" Grid.Row="1" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Label Text="Boy (cm):" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Entry Placeholder="Boy giriniz" x:Name="HeightEntry" Grid.Row="0"/>
+                <Slider Minimum="0" Maximum="300" Value="170" x:Name="HeightSlider" ValueChanged="HeightSlider_ValueChanged" Grid.Row="1" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Button Text="Hesapla" Clicked="CalculateButton_Clicked1" />
+
+            <Label Text="VKI: " x:Name="VkiLabel" />
+            <Label Text="Durum: " x:Name="StatusLabel" />
+        </StackLayout>
+    </ContentPage>

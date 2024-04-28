@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp10.NewPage1"
+             Title="Renk Secici">
+    <StackLayout Padding="20">
+        <Grid RowDefinitions="*,*,*,*,*,*,*,*,*"
+              ColumnDefinitions="*,*">
+
+            <Label Text="Kırmızı:" Grid.Row="0" Grid.Column="0"/>
+            <Slider Minimum="0" Maximum="255" ValueChanged="ColorSlider_ValueChanged" x:Name="RedSlider" Grid.Row="0" Grid.Column="1"/>
+
+            <Label Text="Yeşil:" Grid.Row="1" Grid.Column="0"/>
+            <Slider Minimum="0" Maximum="255" ValueChanged="ColorSlider_ValueChanged" x:Name="GreenSlider" Grid.Row="1" Grid.Column="1"/>
+
+            <Label Text="Mavi:" Grid.Row="2" Grid.Column="0"/>
+            <Slider Minimum="0" Maximum="255" ValueChanged="ColorSlider_ValueChanged" x:Name="BlueSlider" Grid.Row="2" Grid.Column="1"/>
+
+            <BoxView x:Name="ColorBox" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="100"/>
+            <Label x:Name="ColorCodeLabel" Text="" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+            <Button Text="Renk Kodunu Kopyala" Clicked="CopyColorButton_Clicked" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Button Text="Random Color" Clicked="RandomColorButton_Clicked" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+
+
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
