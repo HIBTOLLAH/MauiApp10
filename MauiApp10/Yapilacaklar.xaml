@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp10.Yapilacaklar"
-             Title="Yapilacaklar">
+             Title="Yapilacaklar"
+             x:Name="MyPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ekle" Command="{Binding AddTaskCommand}" IconImageSource="indir.png" />
         <ToolbarItem Text="Kaydet" Command="{Binding SaveCommand}" IconImageSource="images.jpg" />
@@ -15,8 +16,8 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Spacing="10">
                             <Label Text="{Binding}" VerticalOptions="CenterAndExpand" />
-                            <ImageButton Source="img.png" WidthRequest="30" HeightRequest="30" Command="{Binding BindingContext.EditTaskCommand, Source={x:Reference Name=MyPage}}" CommandParameter="{Binding .}" />
-                            <ImageButton Source="delet.jpg" WidthRequest="30" HeightRequest="30" Command="{Binding BindingContext.DeleteTaskCommand, Source={x:Reference Name=MyPage}}" CommandParameter="{Binding .}" />
+                            <ImageButton Source="img.png" WidthRequest="30" HeightRequest="30" Command="{Binding BindingContext.EditTaskCommand, Source={x:Reference MyPage}}" CommandParameter="{Binding .}" />
+                            <ImageButton Source="delet.jpg" WidthRequest="30" HeightRequest="30" Command="{Binding BindingContext.DeleteTaskCommand, Source={x:Reference MyPage}}" CommandParameter="{Binding .}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
@@ -24,3 +25,4 @@
         </ListView>
     </StackLayout>
 </ContentPage>
+
